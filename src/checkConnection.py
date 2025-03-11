@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 import time
 import requests
 
-USER = "erick.aleixo@quickcomex.com.br"
-PASSWORD = "quick@123"
+USER = "seu_usuario"
+PASSWORD = "sua_senha"
 
 def verificar_site_selenium(url):
     driver = webdriver.Chrome()  # Ou Edge, Firefox...
@@ -14,7 +14,7 @@ def verificar_site_selenium(url):
         driver.get(url)
         time.sleep(4)
     
-        if "Entrar em Quickcomex" in driver.title:
+        if "Aba_navegador" in driver.title:
             print(f"✅ {url} Login efetuado com sucesso, site esta OK!")
         else:
             print(f"⚠️ {url} pode estar com problemas.")
@@ -52,4 +52,4 @@ def verificar_site_selenium(url):
         driver.quit()
 
 # Testando
-verificar_site_selenium("https://dbschenker.quickcomex.com.br/")
+verificar_site_selenium("seu_site")
